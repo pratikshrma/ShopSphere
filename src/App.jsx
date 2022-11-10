@@ -1,9 +1,27 @@
-import React from 'react'
+import React from "react";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import SingleProduct from "./pages/SingleProduct";
+import Error from "./pages/Error";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+    return (
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route exact path="/" element={<Home/>}/>
+                <Route path="/about" element={<About />}/>
+                <Route exact path="/product/:id" element={<SingleProduct />}/>
+                <Route path="*" element={<Error />}/>        
+            </Routes>
+        </Router>
+    );
+};
 
-export default App
+export default App;
