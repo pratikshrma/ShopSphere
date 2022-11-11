@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useGlobalContext } from '../context'
 import Loading from './Loading'
 import Product from './Product'
@@ -8,6 +8,9 @@ const ProductList = () => {
     if(loading){
       return <Loading/>
     }
+    useEffect(()=>{
+      window.scrollTo(0,0);
+    },[])
     if(result.length<1){
       return (
         <h2 className='section-title'>

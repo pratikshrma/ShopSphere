@@ -1,7 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useGlobalContext } from '../context'
 
 const Product = ({brand,title:name,discountPercentage,id,image,rating,stock,thumbnail,price}) => {
+  const {addItemToCart}=useGlobalContext()
+  const handleCartAdd=(e)=>{
+    e.preventDefault()
+    addItemToCart(id)
+  }
   return (
     <article className="product">
       <div className="img-container">
@@ -14,6 +20,7 @@ const Product = ({brand,title:name,discountPercentage,id,image,rating,stock,thum
         <h4>Discount: {discountPercentage}%</h4>
         <h4>Buy Now at: {(price-price*(discountPercentage/100)).toFixed(1)}</h4>
         <Link to={`/product/${id}`} className='btn btn-primary btn-details'>Details</Link>
+        <button className='btn btn-primary' onClick={handleCartAdd}>Add To Cart</button>
       </div>
     </article>
   )
