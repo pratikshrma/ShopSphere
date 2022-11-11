@@ -213,7 +213,7 @@ Variables
     margin-bottom: 3.5rem;
     margin-top: 1rem;
   }
-  .cocktails-center {
+  .products-center {
     width: var(--smallWidth);
     margin: 0 auto;
     max-width: var(--fullWidth);
@@ -223,7 +223,7 @@ Variables
     /* align-items: start; */
   }
   @media screen and (min-width: 576px) {
-    .cocktails-center {
+    .products-center {
       grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
     }
   }
@@ -233,7 +233,7 @@ Variables
   ======
   */
   
-  .cocktail {
+  .product {
     background: var(--mainWhite);
     margin-bottom: 2rem;
     box-shadow: var(--lightShadow);
@@ -242,27 +242,27 @@ Variables
     grid-template-rows: auto 1fr;
     border-radius: var(--mainBorderRadius);
   }
-  .cocktail:hover {
+  .product:hover {
     box-shadow: var(--darkShadow);
   }
-  .cocktail img {
+  .product img {
     height: 20rem;
     object-fit: cover;
     border-top-left-radius: var(--mainBorderRadius);
     border-top-right-radius: var(--mainBorderRadius);
   }
-  .cocktail-footer {
+  .product-footer {
     padding: 1.5rem;
   }
-  .cocktail-footer h3,
-  .cocktail-footer h4,
-  .cocktail-footer p {
+  .product-footer h3,
+  .product-footer h4,
+  .product-footer p {
     margin-bottom: 0.3rem;
   }
-  .cocktail-footer h3 {
+  .product-footer h3 {
     font-size: 2rem;
   }
-  .cocktail-footer p {
+  .product-footer p {
     color: var(--darkGrey);
     margin-bottom: 0.5rem;
   }
@@ -309,7 +309,7 @@ Variables
   ======
   */
   
-  .cocktail-section {
+  .product-section {
     text-align: center;
   }
   .drink {
