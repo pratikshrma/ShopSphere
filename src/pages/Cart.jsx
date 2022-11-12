@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Loading from '../components/Loading'
 import { useGlobalContext } from '../context'
+import CartItem from '../components/CartItem'
 
 const url="https://dummyjson.com/products/"
 
@@ -39,8 +40,17 @@ const Cart = () => {
         <h2>Your Bag</h2>
       </header>
       <div>
-        
+        {cart.map((item)=>{
+          return <CartItem key={item.id} {...item}/>
+        })}
       </div>
+      <footer>
+        <hr />
+        <div className="cart-total">
+          <h4>Total <span>xx$</span></h4>
+        </div>
+        <button className='btn clear-btn' onClick={(e)=>{}}>Clear Cart</button>
+      </footer>
     </section>
   )
 }

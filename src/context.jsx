@@ -11,8 +11,9 @@ const AppProvider = ({ children }) => {
     const [result, setResult] = useState([]);
     const [cart,setCart]=useState([])
 
-    const addItemToCart=(id)=>{
-        setCart([...cart,id])
+    const addItemToCart=(id,name,price,image)=>{
+        console.log(image)
+        setCart([...cart,{id:id,name:name,price:price,image:image}])
     }
 
     const fetchResult = async () => {
