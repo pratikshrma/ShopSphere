@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../logo.svg";
-import cart from "../cart.svg";
+import logo from "../assets/logo.svg";
+import cart from "../assets/cart.svg";
 
 const Navbar = () => {
     return (

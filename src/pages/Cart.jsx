@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Loading from '../components/Loading'
-import { useGlobalContext } from '../context'
 import CartItem from '../components/CartItem'
+
+import { useGlobalContext } from '../context'
 
 const url="https://dummyjson.com/products/"
 
 const Cart = () => {
-  const {cart}=useGlobalContext()
+  const {cart,total,clearCart}=useGlobalContext()
+  
   const [loading,setLoading]=useState(true)
   const [data,setData]=useState([])
   useEffect(()=>{
@@ -47,9 +49,9 @@ const Cart = () => {
       <footer>
         <hr />
         <div className="cart-total">
-          <h4>Total <span>xx$</span></h4>
+          <h4>Total <span>${total}</span></h4>
         </div>
-        <button className='btn clear-btn' onClick={(e)=>{}}>Clear Cart</button>
+        <button className='btn btn-primary' onClick={clearCart}>Clear Cart</button>
       </footer>
     </section>
   )
