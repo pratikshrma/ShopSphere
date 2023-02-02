@@ -4,6 +4,8 @@ import About from "./pages/About";
 import SingleProduct from "./pages/SingleProduct";
 import Error from "./pages/Error";
 import Cart from "./pages/Cart";
+import EasySearch from "./components/EasySearch"
+import Marq from "./components/Marq"
 import {
     BrowserRouter as Router,
     Routes,
@@ -11,11 +13,14 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
+
 const App = () => {
+    
     return (
         <Router>
             <Navbar />
-            <Routes>
+            <Marq />
+            <Routes>table
                 <Route exact path="/" element={<Home/>}/>
                 <Route path="/about" element={<About />}/>
                 <Route path="/cart" element={<Cart />}/>
@@ -23,6 +28,7 @@ const App = () => {
                 <Route path="*" element={<Error />}/>        
             </Routes>
         </Router>
+
     );
 };
 

@@ -17,7 +17,6 @@ const ProductList = () => {
     }
     return (
       <section className="section">
-        <h2 className="section-title">Products</h2>
         <div className="products-center">
           {result.map((item)=>{
             return <Product key={item.id} {...item}/>

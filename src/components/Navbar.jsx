@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.svg";
 import cart from "../assets/cart.svg";
+import SearchForm from "./SearchForm"
 
 const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="nav-center">
                 <Link to="/">
-                    <img src={logo} alt="Shopping Logo" height="60" />
+                    <span>Air_Traders.in</span>
                 </Link>
+                <SearchForm />
                 <ul className="nav-links">
                     <li>
                         <Link to="/">Home</Link>
@@ -19,8 +20,11 @@ const Navbar = () => {
                     </li>
                     <Link to='/cart'>
                     <li>
-                        <img src={cart} alt="Cart Image" height="30"/>
+                        <div className="cartback">
+                        <img src={cart} alt="Cart Image" height="30" className="cartlogo"/>
+                        </div>
                     </li>
+
                     </Link>
                 </ul>
             </div>
