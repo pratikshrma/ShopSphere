@@ -20,8 +20,10 @@ const Product = ({brand,title:name,discountPercentage,id,image,rating,stock,thum
         <h4>Price:<s>{price}</s>$</h4>
         <h4>Discount: {discountPercentage}%</h4>
         <h4>Buy Now at: {priceAfterDiscount}</h4>
+        <div className='buttondiv'>
         <Link to={`/product/${id}`} className='btn btn-primary btn-details'>Details</Link>
         <button className='btn btn-primary' onClick={handleCartAdd}>Add To Cart</button>
+        </div>      
       </div>
     </article>
   )

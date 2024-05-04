@@ -3,6 +3,9 @@ import reducer from "./reducer";
 
 const url = "https://dummyjson.com/products/search?q=";
 
+const quickSearchTerms=["iphone","bed","table","samsung","Shampoo"]
+
+
 const initialState = {
     cart: [
         {
@@ -15,6 +18,8 @@ const initialState = {
     ],
     total: 0,
 };
+
+
 
 const AppContext = React.createContext();
 
@@ -76,6 +81,7 @@ const AppProvider = ({ children }) => {
                 setSearchTerm,
                 result,
                 addItemToCart,
+                quickSearchTerms,
             }}
         >
             {children}
