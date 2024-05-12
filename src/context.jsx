@@ -3,8 +3,7 @@ import reducer from "./reducer";
 
 const url = "https://dummyjson.com/products/search?q=";
 
-const quickSearchTerms=["iphone","bed","table","samsung","Shampoo"]
-
+const quickSearchTerms = ["iphone", "bed", "table", "samsung", "Shampoo"];
 
 const initialState = {
     cart: [
@@ -13,19 +12,17 @@ const initialState = {
             image: "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
             name: "iPhone 9",
             price: "477.8",
-            amount:1
+            amount: 1,
         },
     ],
     total: 0,
 };
 
-
-
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
-    const [searchTerm, setSearchTerm] = useState("a");
+    const [searchTerm, setSearchTerm] = useState("");
     const [result, setResult] = useState([]);
 
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -36,22 +33,19 @@ const AppProvider = ({ children }) => {
     const addItemToCart = (id, name, price, image) => {
         dispatch({ type: "ADDITEM", payload: { id, name, price, image } });
     };
-    const increase=(id)=>{
-        dispatch({type:"INCREASE",payload:id})
-    }
-    const decrease=(id)=>{
-        dispatch({type:"DECREASE",payload:id})
-    }
-    const remove=(id)=>{
-        dispatch({type:"REMOVE",payload:id})
-    }
+    const increase = (id) => {
+        dispatch({ type: "INCREASE", payload: id });
+    };
+    const decrease = (id) => {
+        dispatch({ type: "DECREASE", payload: id });
+    };
+    const remove = (id) => {
+        dispatch({ type: "REMOVE", payload: id });
+    };
 
-    
-    useEffect(()=>{
-        dispatch({type:'GET_TOTAL'})
-    },[state.cart])
-
-
+    useEffect(() => {
+        dispatch({ type: "GET_TOTAL" });
+    }, [state.cart]);
 
     const fetchResult = async () => {
         setLoading(true);
@@ -78,6 +72,7 @@ const AppProvider = ({ children }) => {
                 decrease,
                 remove,
                 loading,
+                searchTerm,
                 setSearchTerm,
                 result,
                 addItemToCart,

@@ -1,16 +1,17 @@
-import React from 'react'
-import ProductList from '../components/ProductList'
-import Title from '../components/Title'
-  // import SearchForm from '../components/SearchForm'
-
+import React from "react";
+import ProductList from "../components/ProductList";
+import Title from "../components/Title";
+import SearchForm from "../components/SearchForm";
+import { useGlobalContext } from "../context";
 const Home = () => {
-  return (
-    <main className="mainBack">
-      <Title />
-      {/* <SearchForm/> */}
-      {/* <ProductList/> */}
-    </main>
-  )
-}
+    const { searchTerm } = useGlobalContext();
+    return (
+        <main className="mainBack">
+            <Title />
+            {/* <SearchForm /> */}
+            {searchTerm != "" ? <ProductList /> : ""}
+        </main>
+    );
+};
 
-export default Home
+export default Home;
