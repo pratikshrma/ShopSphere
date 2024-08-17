@@ -8,6 +8,7 @@ const Home = () => {
     return (
         <main className="mainBack">
             <Title />
+            hello testing from replit
             {/* <SearchForm /> */}
             {searchTerm != "" ? <ProductList /> : ""}
         </main>
